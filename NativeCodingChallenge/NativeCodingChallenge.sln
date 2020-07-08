@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeCodingChallenge", "Na
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{AF588055-013A-48C0-857B-B28A370CBAD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{83989992-F9AB-4613-8CD7-3B9E8FAD16B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AF588055-013A-48C0-857B-B28A370CBAD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF588055-013A-48C0-857B-B28A370CBAD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF588055-013A-48C0-857B-B28A370CBAD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83989992-F9AB-4613-8CD7-3B9E8FAD16B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83989992-F9AB-4613-8CD7-3B9E8FAD16B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83989992-F9AB-4613-8CD7-3B9E8FAD16B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83989992-F9AB-4613-8CD7-3B9E8FAD16B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
