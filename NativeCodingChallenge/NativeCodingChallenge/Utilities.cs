@@ -10,6 +10,8 @@ namespace NativeCodingChallenge.Utils
 {
     public class Utilities
     {
+        private static object s_lock = new object();
+
         // Create a function to sum up all the even numbers in a supplied List parameter and return the result.
         public static long SumEven(IEnumerable<long> numbers)
         {
@@ -28,11 +30,22 @@ namespace NativeCodingChallenge.Utils
         }
 
         // Create a function which will print out the numbers in a List to the console in a loop with a configurable delay (print the number out every 500ms, or every 1000ms ). Make sure the function can be called from a thread.
-        public static void PrintList(string threadName, IEnumerable<long> numbers, int delay, ManualResetEvent resetEvent)
+
+        // I would normally do this with an async/await but the instructions said Thread specifically so I went with an older school
+        // threading metholody
+        public static void PrintList(string threadName, IEnumerable<long> numbers, int delay, ManualResetEvent resetEvent, List<long> winnerList)
         {
             foreach (var number in numbers)
             {
-                Console.WriteLine($"{number}:{threadName}");
+                lock(s_lock)
+                {
+                    if(!winnerList.Contains(number))
+                    {
+                        winnerList.Add(number);
+                        Console.Write($"{number}:{threadName} ");
+                    }
+                }
+                
                 Thread.Sleep(delay);
             }
 
@@ -44,7 +57,7 @@ namespace NativeCodingChallenge.Utils
         {
             var result = new List<long>();
 
-            for (var x = 0; x < 10000; x++)
+            for (var x = 1; x < 100; x++)
             {
                 result.Add(x);
             }

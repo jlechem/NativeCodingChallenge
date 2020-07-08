@@ -26,12 +26,14 @@ namespace UnitTestProject
             Assert.AreEqual(result,2);
         }
 
+        //[TestMethod]
         public void TestTimeOk()
         {
             var result = Utilities.PrintHttpGET("https://localhost:44329/api/time");
             Assert.AreNotEqual(result, "Simulated Server Error");
         }
 
+        //[TestMethod]
         public void TestTimeNotOk()
         {
             var result = Utilities.PrintHttpGET("https://localhost:44329/api/time?simulatedError=true");
