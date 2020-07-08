@@ -15,8 +15,10 @@ namespace NativeCodingChallenge
 
         static Random random = new Random();
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
+            await PrintHttpGET("https://localhost:44329/api/time");
+
             numbers.AddRange(PrimeList());
 
             var events = new ManualResetEvent[2];
@@ -42,12 +44,13 @@ namespace NativeCodingChallenge
         }
 
         // Create a function that will make an http GET request to a given URL and dump out the result in Console. (Be ready to discuss what external tools you can use to validate the behavior, that your program is indeed making the request for ex: fiddler, wireshark...)
-        static void PrintHttpGET(string URI)
+        static async Task PrintHttpGET(string URI)
         {
             using (var client = new HttpClient())
             {
-                var result = client.GetAsync(URI);
-                Console.WriteLine(result.Result.StatusCode);
+                var result = await client.GetStringAsync(URI);
+
+                Console.WriteLine(result);
             }
         }
 

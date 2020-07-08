@@ -15,7 +15,7 @@ namespace WebApplication.Controllers
         {
             if( simulateError)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError);
+                return StatusCode(StatusCodes.Status500InternalServerError,"Simulated Server Error");
             }
             else
             {
